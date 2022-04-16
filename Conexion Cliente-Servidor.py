@@ -20,6 +20,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_tcp:
             # Verificamos que hemos recibido datos
             if not data:
                 break
+            #como la conexión ha sido establecida, es decir, recibe peticiones de conexión, devolvemos valores correspondintes(float)
+            temperatura_minima = float(input("Temperatura minima:"))
+            temperatura_maxima = float(input("Temperatura máxima:"))
+            presion = float(input("Presión:"))
+            plumiometría = float(input("Pluviometría:"))
             else:
                 print('[*] Datos recibidos: {}'.format(data.decode('utf-8')))
             conn.send(data) # Hacemos echo convirtiendo de nuevo a bytes
